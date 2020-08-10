@@ -1,5 +1,9 @@
 package ro.jademy.carrental;
 
+import ro.jademy.carrental.car.Car;
+import ro.jademy.carrental.car.ford.Ford;
+import ro.jademy.carrental.data.AppData;
+
 public class Shop {
     // Q: what fields and methods should this class contain?
 
@@ -46,4 +50,36 @@ public class Shop {
 
         // Q: what should be the return type of this method?
     }
+
+    public void showAllCars() {
+        //TODO : display all available cars in the carpark
+    }
+
+
+    public void availableCars() {
+        //TODO : display only available cars in the carpark
+    }
+
+    public void rentedCarAvailability() {
+        //TODO : display only rented cars and when they will be available
+    }
+
+    public void rentedCars() {
+        //TODO : display only rented cars in the carpark
+    }
+
+    private void filterCars() {
+       /* //TODO : FIter cars by :
+       *                -make
+       *                -model
+       *                -availability
+       * */
+
+    }
+
+    public void showAllCustomers(){
+        //TODO : display all customers
+    }
+
+
 }
