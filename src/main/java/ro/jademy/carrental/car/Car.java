@@ -1,5 +1,7 @@
 package ro.jademy.carrental.car;
 
+import java.util.Objects;
+
 public class Car {
 
     private String make;
@@ -28,6 +30,18 @@ public class Car {
 
     public Car(String make, String model, Integer year, String fuelType, String carType, String color, String basePrice, String engine, String transmissionType, Integer doorNumber) {
         this.make = make;
+        this.model = model;
+        this.year = year;
+        this.fuelType = fuelType;
+        this.carType = carType;
+        this.color = color;
+        this.basePrice = basePrice;
+        this.engine = engine;
+        this.transmissionType = transmissionType;
+        this.doorNumber = doorNumber;
+    }
+
+    public Car(String model, Integer year, String fuelType, String carType, String color, String basePrice, String engine, String transmissionType, Integer doorNumber) {
         this.model = model;
         this.year = year;
         this.fuelType = fuelType;
@@ -133,6 +147,29 @@ public class Car {
                 ", transmissionType='" + transmissionType + '\'' +
                 ", doorNumber=" + doorNumber +
                 '}';
+    }
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Car car = (Car) o;
+        return Objects.equals(make, car.make) &&
+                Objects.equals(model, car.model) &&
+                Objects.equals(year, car.year) &&
+                Objects.equals(fuelType, car.fuelType) &&
+                Objects.equals(carType, car.carType) &&
+                Objects.equals(color, car.color) &&
+                Objects.equals(basePrice, car.basePrice) &&
+                Objects.equals(engine, car.engine) &&
+                Objects.equals(transmissionType, car.transmissionType) &&
+                Objects.equals(doorNumber, car.doorNumber);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(make, model, year, fuelType, carType, color, basePrice, engine, transmissionType, doorNumber);
     }
 }
 
