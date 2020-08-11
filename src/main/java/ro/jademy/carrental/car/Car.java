@@ -23,6 +23,8 @@ public class Car {
     // Q: do we need a constructor other than the default one?
     // Q: how can we better protect the car data?
 
+    //TODO : Create an Engine class?!
+
 
     public Car(String make, String model, Integer year, String fuelType, String carType, String color, String basePrice, String engine, String transmissionType, Integer doorNumber) {
         this.make = make;

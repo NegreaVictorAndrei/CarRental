@@ -2,18 +2,28 @@ package ro.jademy.carrental.car;
 
 import java.time.LocalDate;
 
-public class RentedCar {
+public class RentedCarHistoryItem {
 
+    private Car car;
     private boolean isRented;
     private LocalDate datePickedUp;
     private LocalDate dateToBeReturned;
     private int AmountToPay;
 
-    public RentedCar(boolean isRented, LocalDate datePickedUp, LocalDate dateToBeReturned, int amountToPay) {
+    public RentedCarHistoryItem(Car car, boolean isRented, LocalDate datePickedUp, LocalDate dateToBeReturned, int amountToPay) {
+        this.car = car;
         this.isRented = isRented;
         this.datePickedUp = datePickedUp;
         this.dateToBeReturned = dateToBeReturned;
         AmountToPay = amountToPay;
+    }
+
+    public Car getCar() {
+        return car;
+    }
+
+    public void setCar(Car car) {
+        this.car = car;
     }
 
     public boolean isRented() {
@@ -51,7 +61,8 @@ public class RentedCar {
     @Override
     public String toString() {
         return "RentedCar{" +
-                "isRented=" + isRented +
+                "car=" + car +
+                ", isRented=" + isRented +
                 ", datePickedUp=" + datePickedUp +
                 ", dateToBeReturned=" + dateToBeReturned +
                 ", AmountToPay=" + AmountToPay +

@@ -1,11 +1,33 @@
 package ro.jademy.carrental.user;
 
+import ro.jademy.carrental.car.RentedCarHistoryItem;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public abstract class   User {
 
     private String firstName;
     private String lastName;
     private String useranme;
     private String password;
+
+
+
+
+
+    private List <RentedCarHistoryItem> rentedCarHistoryItemHystory  = new ArrayList<>();
+
+    public RentedCarHistoryItem getCurrentRentedCar(){
+        for (RentedCarHistoryItem item : rentedCarHistoryItemHystory){
+            if (item.isRented()){
+                return item;
+            }
+        }
+        return null;
+    }
+
+
 
 
     public String getFirstName() {
